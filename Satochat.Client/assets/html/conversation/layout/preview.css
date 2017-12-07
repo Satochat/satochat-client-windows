@@ -1,0 +1,15 @@
+@import 'base.css';
+
+body#conversation.preview {
+    word-wrap: break-word;
+}
+
+body#conversation.preview div.line {
+    white-space: pre-wrap;
+}
+
+body#conversation.preview code.block {
+    white-space: pre;
+    word-wrap: normal;
+    display: block;
+}

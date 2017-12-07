@@ -1,0 +1,79 @@
+@import 'base.css';
+@import 'spinner.css';
+
+body#conversation.history {
+    margin: 0.5rem;
+}
+
+body#conversation.history #messages article .spinner {
+    display: block;
+    float: right;
+}
+
+body#conversation.history #messages article.delivered .spinner {
+    display: none;
+}
+
+body#conversation.history #messages article > header {
+    color: #a82f2f;
+    display: inline;
+}
+
+body#conversation.history #messages article > header.self {
+    color: #16569e;
+}
+
+body#conversation.history #messages article > header > time {
+    font-size: 0.85em;
+}
+
+body#conversation.history #messages article > header > time + span {
+    font-size: 1.05em;
+    font-weight: bold;
+}
+
+body#conversation.history #messages article > section {
+    display: inline;
+}
+
+body#conversation.history #messages article {
+    word-wrap: break-word;
+}
+
+body#conversation.history #messages article > section > div.line:first-child {
+    display: inline;
+}
+
+body#conversation.history #messages article > section > div.line {
+    white-space: pre-wrap;
+}
+
+body#conversation.history #messages article > section code {
+    line-height: 1em;
+    background: #f9f9f9;
+    border-radius: .2rem;
+}
+
+body#conversation.history #messages article > section > div.line code {
+    color: #c92538;
+    border: 1px solid #ddd;
+    padding: 0.05em 0.3em 0.05em 0.3em;
+    font-size: .9em;
+}
+
+body#conversation.history #messages article > section > code.block {
+    white-space: pre;
+    word-wrap: normal;
+    display: block;
+    overflow: auto;
+    max-height: 100em;
+    padding: .5rem;
+    margin: .5rem 0 .5rem 0;
+    border: 1px solid #d4d4d4;
+}
+
+body#conversation.history #users-typing {
+    margin-top: .3rem;
+    color: #666;
+    font-style: italic;
+}
