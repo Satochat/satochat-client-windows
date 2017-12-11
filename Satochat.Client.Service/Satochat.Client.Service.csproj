@@ -3,12 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\Secrets\StrongNameKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\secrets\StrongNameKey.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Satochat.Shared" Version="1.0.0-dev.60" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta1" />
+    <PackageReference Include="Satochat.Shared" Version="1.0.0-ci.1.master.37edb13" />
   </ItemGroup>
 
 </Project>

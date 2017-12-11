@@ -1,0 +1,15 @@
+image: Visual Studio 2017
+
+notifications:
+  - provider: Email
+    on_build_success: false
+    on_build_failure: false
+    on_build_status_changed: false
+
+install:
+  - ps: .\scripts\ci\StrongNameKey.ps1
+  - ps: .\scripts\ci\CodeSigningCertificate.ps1
+  - ps: nuget restore -Source $env:NUGET_SOURCE_URL
+
+build_script:
+  - ps: msbuild /t:build
