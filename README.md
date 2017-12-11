@@ -1,4 +1,4 @@
-﻿# Satochat client
+﻿# Satochat client [![Build status](https://ci.appveyor.com/api/projects/status/jc00upwtbqjb9pre/branch/master?svg=true)](https://ci.appveyor.com/project/SteffenL/satochat-client-windows/branch/master)
 
 Windows client for Satochat.
 
