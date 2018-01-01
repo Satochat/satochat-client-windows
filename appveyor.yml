@@ -9,9 +9,9 @@ notifications:
 install:
   - ps: Stop-Service docker
   - ps: Rename-Item -NewName Docker.old "C:\Program Files\Docker"
-  #- cmd: choco install docker-for-windows --pre
-  #- cmd: choco install docker-compose
-  #- ps: Start-Service com.docker.service
+  - cmd: choco install docker-for-windows --pre
+  - cmd: choco install docker-compose
+  - ps: Start-Service com.docker.service
   #- ps: Rename-Item -NewName Docker.new "C:\Program Files\Docker"
   #- ps: New-Item -Path "C:\Program Files\Docker" -ItemType SymbolicLink -Value "C:\Program Files\Docker\Docker.new"
   - cmd: refreshenv
