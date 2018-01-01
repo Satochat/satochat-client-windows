@@ -7,10 +7,11 @@ notifications:
     on_build_status_changed: false
 
 install:
+  - cmd: choco install docker-compose
   - ps: .\scripts\ci\StrongNameKey.ps1
   - ps: .\scripts\ci\CodeSigningCertificate.ps1
   - ps: nuget restore -Source $env:NUGET_SOURCE_URL
 
 build_script:
-  - ps: msbuild /t:publish /p:Configuration=Release
-  - ps: .\scripts\ci\DeployClickOnce.ps1
+  - ps: .\scripts\ci\Build.ps1
+  - ps: .\scripts\ci\DeployDocker.ps1
