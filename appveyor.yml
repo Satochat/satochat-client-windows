@@ -7,8 +7,8 @@ notifications:
     on_build_status_changed: false
 
 install:
-  - cmd: msiexec /x InstallDocker.msi /quiet /qn /norestart /le UninstallDocker.log; Get-Content UninstallDocker.log
   - ps: Invoke-WebRequest -UseBasicParsing -OutFile InstallDocker.msi https://download.docker.com/win/edge/InstallDocker.msi
+  - cmd: msiexec /x InstallDocker.msi /quiet /qn /norestart /le UninstallDocker.log; Get-Content UninstallDocker.log
   - cmd: msiexec /i InstallDocker.msi /quiet /qn /norestart /le InstallDocker.log; Get-Content InstallDocker.log
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
   - cmd: docker version
