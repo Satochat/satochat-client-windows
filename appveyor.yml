@@ -7,7 +7,10 @@ notifications:
     on_build_status_changed: false
 
 install:
-  - cmd: choco install docker-for-windows --pre
+  #- cmd: choco install docker-for-windows --pre
+  - ps: Stop-Service docker
+  - ps: Install-Package -Name docker -ProviderName DockerMsftProvider -Verbose -Update -Force
+  - ps: Start-Service docker
   - cmd: choco install docker-compose
   - cmd: refreshenv
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
