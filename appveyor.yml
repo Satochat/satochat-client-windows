@@ -14,4 +14,6 @@ install:
 
 build_script:
   - ps: .\scripts\ci\Build.ps1
-  - ps: .\scripts\ci\DeployDocker.ps1
+
+deploy_script:
+  - ps: if (-not $env:APPVEYOR_PULL_REQUEST_NUMBER -and $env:APPVEYOR_REPO_BRANCH -eq "releases") { .\scripts\ci\DeployDocker.ps1 }
