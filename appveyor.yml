@@ -12,4 +12,5 @@ install:
   - ps: nuget restore -Source $env:NUGET_SOURCE_URL
 
 build_script:
-  - ps: msbuild /t:build
+  - ps: msbuild /t:publish /p:Configuration=Release
+  - ps: .\scripts\ci\DeployClickOnce.ps1
