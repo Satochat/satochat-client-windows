@@ -7,9 +7,13 @@ notifications:
     on_build_status_changed: false
 
 install:
-  - ps: Invoke-WebRequest -UseBasicParsing -OutFile InstallDocker.msi https://download.docker.com/win/edge/InstallDocker.msi
-  - cmd: msiexec /i InstallDocker.msi /quiet /qn /norestart /log InstallDocker.log
+  - cmd: choco install docker-for-windows --pre
+  - cmd: choco install docker-compose
+  - cmd: refreshenv
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
+  - cmd: where docker
+  - cmd: where docker-compose
+  - cmd: where DockerCli
   - cmd: docker version
   - cmd: docker-compose version
   - cmd: DockerCli -Version
