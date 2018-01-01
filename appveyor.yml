@@ -10,6 +10,7 @@ install:
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
   - cmd: refreshenv
+  - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
   - cmd: docker version
   - cmd: docker-compose version
   - cmd: DockerCli -SwitchDaemon
