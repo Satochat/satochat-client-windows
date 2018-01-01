@@ -9,6 +9,7 @@ notifications:
 install:
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
+  - cmd: refreshenv
   - cmd: docker version
   - cmd: docker-compose version
   - cmd: DockerCli -SwitchDaemon
