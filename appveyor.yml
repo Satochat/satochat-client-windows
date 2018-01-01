@@ -7,11 +7,9 @@ notifications:
     on_build_status_changed: false
 
 install:
-  - ps: Stop-Service com.docker.service
   - ps: Rename-Item -NewName Docker.old "C:\Program Files\Docker"
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
-  - ps: Start-Service com.docker.service
   #- ps: Rename-Item -NewName Docker.new "C:\Program Files\Docker"
   #- ps: New-Item -Path "C:\Program Files\Docker" -ItemType SymbolicLink -Value "C:\Program Files\Docker\Docker.new"
   - cmd: refreshenv
