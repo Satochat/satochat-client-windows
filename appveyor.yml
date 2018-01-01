@@ -8,7 +8,7 @@ notifications:
 
 install:
   - ps: Invoke-WebRequest -UseBasicParsing -OutFile InstallDocker.msi https://download.docker.com/win/edge/InstallDocker.msi
-  - cmd: msiexec InstallDocker.msi /quiet /qn /norestart
+  - cmd: msiexec /i InstallDocker.msi /quiet /qn /norestart
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
   - cmd: docker version
   - cmd: docker-compose version
