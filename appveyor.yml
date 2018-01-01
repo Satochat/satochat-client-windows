@@ -7,12 +7,14 @@ notifications:
     on_build_status_changed: false
 
 install:
+  - cmd: choco install docker --pre
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
   - cmd: refreshenv
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
   - cmd: docker version
   - cmd: docker-compose version
+  - cmd: DockerCli -Version
   - cmd: DockerCli -SwitchDaemon
   - ps: .\scripts\ci\StrongNameKey.ps1
   - ps: .\scripts\ci\CodeSigningCertificate.ps1
