@@ -7,14 +7,10 @@ notifications:
     on_build_status_changed: false
 
 install:
-  - ps: Stop-Service docker
-  - ps: Rename-Item -NewName Docker.old "C:\Program Files\Docker"
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
-  - ps: Start-Service com.docker.service
   - cmd: refreshenv
   - cmd: path C:\Program Files\Docker\Docker;C:\Program Files\Docker\Docker\resources\bin;%PATH%
-  - cmd: DockerCli -SwitchDaemon
   - ps: .\scripts\ci\StrongNameKey.ps1
   - ps: .\scripts\ci\CodeSigningCertificate.ps1
   - ps: nuget restore -Source $env:NUGET_SOURCE_URL
