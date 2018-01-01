@@ -9,7 +9,7 @@ notifications:
 install:
   - cmd: choco install docker-for-windows --pre
   - cmd: choco install docker-compose
-  - cmd: "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon
+  - cmd: "C:\\Program Files\\Docker\\Docker\\DockerCli.exe" -SwitchDaemon
   - ps: .\scripts\ci\StrongNameKey.ps1
   - ps: .\scripts\ci\CodeSigningCertificate.ps1
   - ps: nuget restore -Source $env:NUGET_SOURCE_URL
